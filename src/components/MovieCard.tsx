@@ -56,7 +56,6 @@
 // };
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 interface MovieCardProps {
@@ -70,6 +69,8 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     setIsFavorited(favorites.some((fav: any) => fav.id === movie.id));
+
+    console.log(movie);
   }, [movie.id]);
 
   const toggleFavorite = () => {
@@ -136,15 +137,11 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
             />
             {/* <div className="absolute inset-0 bg-black opacity-30 rounded-lg"></div> */}
             <div className="relative z-10 p-10">
-              <h2 className="text-3xl font-bold">House of Wealth</h2>
-              <p className="mt-4 mb-6 text-gray-400">2023 | Drama | 2h 38m</p>
-              <p className="mb-8">
-                The movie follows the lives of a wealthy family, the Johnsons,
-                who appear to have it all: a grand mansion, luxurious cars, and
-                expensive designer clothing. However, behind the facade of their
-                lavish lifestyle, there are deep-seated tensions and secrets
-                that threaten to tear the family apart.
+              <h2 className="text-3xl font-bold">{movie.title}</h2>
+              <p className="mt-4 mb-6 text-gray-400">
+                {movie.release_date.split("-")[0]} | {movie.type} | 2h 38m
               </p>
+              <p className="mb-8">{movie.overview}</p>
               <div className="flex space-x-4">
                 <Button
                   variant="primary"

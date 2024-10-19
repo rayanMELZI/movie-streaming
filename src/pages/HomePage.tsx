@@ -42,7 +42,7 @@ const HomePage: React.FC = () => {
             {/* Featured Movie */}
             <div className="relative bg-gray-800 rounded-lg p-6 flex gap-10 h-[500px]">
               <img
-                src={`https://image.tmdb.org/t/p/w500${movies[0].poster_path}`}
+                // src={`https://image.tmdb.org/t/p/w500${movies[0].poster_path}`}
                 alt="House of Wealth"
                 className="rounded-lg mb-4 h-full object-cover"
               />
@@ -73,7 +73,6 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             </div>
-
             {movies.map((movie) => (
               <MovieCard key={movie.id} movie={movie} />
             ))}
