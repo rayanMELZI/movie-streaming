@@ -1,6 +1,6 @@
 function Sidebar() {
   return (
-    <aside className="w-64 bg-gray-800 p-6 sticky top-0 h-screen">
+    <aside className="w-[17vw] bg-gray-800 p-6 sticky top-0 h-screen">
       <div className="text-xl font-bold mb-6">WATCH</div>
       <nav>
         <ul className="space-y-4">
